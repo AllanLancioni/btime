@@ -1,13 +1,12 @@
 'use strict';
-// Single function to resolve problem
 
+// URL problem => http://dojopuzzles.com/problemas/exibe/encontre-o-telefone/
 
 // Regex que da match em todas as letras, separando elas por grupos
 
 // Função que transforma a string na sequência de números, se o parametro não for uma string, dispara um erro
 // Replace irá trocar cada cada caractere da string pelo resultado da função
 // Quando usado com regex, o replace manda cada grupo definido pelos parênteses como um parâmetro
-//
 
 class PhoneNumber {
 
