@@ -1,0 +1,45 @@
+<div class="page-content">
+
+  <div class="product-list container-fluid load-animation">
+
+    <div class="title-container smaller">
+      <div class="page-title pseudo-bg-primary">Products</div>
+    </div>
+
+    <div class="row content-row load-animation" *ngIf="!loading">
+      <!-- List column -->
+      <div class="col-12">
+        <div class="row product-list">
+          <div *ngIf="products.length === 0" class="no-product">
+            <h3>No products registered!</h3>
+          </div>
+          <div class="col-xl-4 col-md-6 col-xs-12 product" *ngFor="let product of products">
+            <div class="product-card">
+              <a class="image-wrapper" (click)="viewDetails(product?.id)">
+                <img [src]="'https://picsum.photos/100?image=' + product?.imageNumber || 30">
+              </a>
+              <div class="product-card-detail">
+                <div class="product-name hover-primary" (click)="viewDetails(product?.id)">{{product?.title}}</div>
+                <div class="product-price secondary-color">
+                  {{ product?.price | currency }}
+                </div>
+                <div class="product-options" *ngIf="product.owner === userId">
+                  <i title="Edit" class="material-icons" (click)="editProduct(product)">edit</i>
+                  <i title="Remove" class="material-icons delete" (click)="deleteProduct(product)">delete</i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="text-center load-animation suggest-integration">
+    <h3>Didn't find the product you need? Create a product!</h3>
+
+    <button type="button" class="btn btn-outline-primary" (click)="createProduct()">Create a product</button>
+
+  </div>
+</div>

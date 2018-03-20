@@ -1,0 +1,48 @@
+<div class="page-content">
+  <div class="container load-animation">
+    <div class="row load-animation">
+
+      <div class="col-12 page-title text-center">
+        {{productId ? 'Update' : 'Create'}}
+      </div>
+
+      <div class="col-6 checkout-info">
+        <h2 class="text-center">{{productTitle || 'Craete a product'}}</h2>
+        <ul class="info">
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sed erat viverra.</li>
+          <li>At tempus pulvinar vehicula quisque tincidunt, curae aliquet pharetra diam. </li>
+          <li>Nisi lorem eros cursus sociosqu arcu, donec sed dui facilisis.</li>
+          <li>Himenaeos dapibus sociosqu class etiam vel, justo quisque quam nec.</li>
+        </ul>
+      </div>
+
+      <div class="col-6 checkout-form">
+        <form [formGroup]="form" (ngSubmit)="save()">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" [ngClass]="{'is-invalid': isInvalid('title')}" class="form-control" formControlName="title"
+              required [(ngModel)]="product.title" id="title" aria-describedby="title" placeholder="Product name">
+          </div>
+
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" name="price" [ngClass]="{'is-invalid': isInvalid('price')}" class="form-control" formControlName="price"
+              required [(ngModel)]="product.price" id="price" aria-describedby="price" placeholder="Price (only numbers)">
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description</label>
+            <textarea type="text" name="description" [ngClass]="{'is-invalid': isInvalid('description')}" class="form-control"
+                      formControlName="description" required [(ngModel)]="product.description" id="description" aria-describedby="description" placeholder="Description"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-confirm background-primary color-primary">Save Product</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <app-input label="Name" [(model)]="userData.name"></app-input> -->

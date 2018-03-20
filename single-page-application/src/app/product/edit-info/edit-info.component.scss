@@ -1,0 +1,48 @@
+@import '../../../theme/variables';
+.checkout-info {
+  h3 {
+    font-family: Montserrat;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.7em;
+  }
+  .price {
+    border: 2px solid $primary-color;
+    background: #fff;
+    color: $primary-color;
+    font-family: Montserrat;
+    text-align: center;
+    font-size: 1.4em;
+    padding: .7rem 3rem;
+    border-radius: 50px;
+    max-width: 200px;
+    margin: 1.5rem auto 1rem;
+  }
+  .info {
+    li {
+      position: relative;
+      font-size: 1.1em;
+      padding: 0.5rem 1rem 1rem;
+    }
+  }
+}
+
+.page-title {
+  padding: 2rem 0 4rem;
+  @include style-title-center;
+}
+
+.checkout-form {
+  border-left: 1px solid $grey-light;
+  padding: 1rem 3.5rem;
+  height: auto;
+  .form-control {
+    border-radius: 8px;
+  }
+  input.form-control {
+    padding: 10px 15px;
+  }
+  textarea.form-control {
+    padding: 20px;
+  }
+}

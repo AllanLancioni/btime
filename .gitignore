@@ -1,0 +1,10 @@
+#modules
+
+api/node_modules/
+single-page-application/node_modules/
+
+#ide file
+
+api/.idea
+single-page-application/.idea
+.idea

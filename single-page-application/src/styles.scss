@@ -1,0 +1,278 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~ngx-toastr/toastr";
+@import './theme/variables';
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto:400,700');
+/* Material Icon setup */
+
+.material-icons {
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons';
+  font-size: 24px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+// Generic, applyable for all
+.text-center {
+  text-align: center;
+}
+.load-animation{
+  @keyframes appear {
+    from {opacity: 0}
+    to {opacity: 1}
+  }
+  @keyframes showup {
+    from {max-height: 1px;}
+    to {max-height: 10000px}
+  }
+  animation: appear ease .5s;
+  &.suggest-integration{
+    animation-delay: 1s;
+    animation: appear .5s;
+  }
+}
+
+// ---
+// Container and wrapper
+.container-fluid{
+  max-width: 1250px;
+}
+
+.page-content {
+  width: 100%;
+  height: 100%;
+  color: $text-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  text-align: center;
+  height: 35vh;
+  &.smaller {
+    height: 15vh;
+  }
+  .page-title {
+    &::after {
+      content: "";
+      width: 30px;
+      height: 3px;
+      background-color: $primary-color;
+      display: block;
+      margin-left: 50%;
+      left: -15px;
+      top: -7px;
+      position: relative;
+    }
+  }
+}
+
+.filter-container {
+  padding: 1rem;
+}
+
+// Page default components
+.page-title {
+  display: block;
+  font-size: 2.8em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.page-subtitle {
+  display: block;
+  font-size: 1.5em;
+  opacity: 0.6;
+}
+
+.page-title-input {
+  position: relative;
+  width: 50%;
+  input {
+    width: 100%;
+    height: 48px;
+    margin: 1em auto;
+    border-radius: 50px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ccc;
+    line-height: 48px;
+    font-size: 1.2em;
+    color: $text-color;
+    padding: 0 24px 0 48px;
+    outline: none;
+    transition: .8s;
+    &:focus {
+      box-shadow: 0 10px 12px -3px rgba(0, 0, 0, 0.2);
+    }
+    &::placeholder {
+      opacity: 0.5;
+    }
+    &:-ms-input-placeholder {
+      opacity: 0.5;
+    }
+  }
+  i {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.5em;
+    left: 12px;
+    line-height: 1em;
+    font-size: 2em;
+    color: $primary-color;
+    transition: .8s;
+    z-index: 2;
+    user-select: none;
+    @extend .material-icons;
+    content: 'search';
+    user-select: none;
+  }
+  &.right {
+    input {
+      padding-left: 12px;
+    }
+    i {
+      right: 12px;
+      left: initial;
+    }
+  }
+  a {
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+// Side filters
+.filter-block {
+  width: 100%;
+  font-size: 14px;
+  &-title {
+    width: 100%;
+    font-size: 1.2em;
+    padding: 0 1em;
+    font-weight: bold;
+    label {
+      margin: 0;
+    }
+  }
+  .filter-tags {
+    padding: 0.5em 0;
+  }
+}
+
+.filter-tag {
+  padding: 0.2em 1em;
+  display: inline-block;
+  transition: .3s;
+  background: #dedede;
+  opacity: 0.7;
+  border-radius: 50px;
+  margin: 0.3em;
+  cursor: pointer;
+  &:hover,
+  &.active {
+    background: $primary-color;
+    color: #fff;
+  }
+  &.category {
+    padding: 0 0.7em;
+    margin: 0.2em 0.3em;
+  }
+}
+
+// ---
+// ---
+
+// Buttons
+.btn {
+  &.btn-confirm {
+    border: 2px solid $color-pink;
+    background: $color-pink;
+    color: #fff;
+    @include default-transition;
+    padding: 15px 25px;
+    border-radius: 50px;
+    margin: 15px auto 0;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-pink-dark;
+      border-color: $color-pink-dark;
+      color: #fff;
+    }
+  }
+  &.btn-buy {
+    background-color: $color-pink;
+    padding: .7rem 3.5rem;
+    border-radius: 40px;
+    color: #fff;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: auto;
+    margin: 0 auto;
+    border: 3px solid transparent;
+    @include default-transition;
+    &:hover,
+    &:active {
+      background: #fff;
+      border-color: $color-pink;
+      color: $color-pink
+    }
+    &.white {
+      box-shadow: initial;
+      outline: none;
+      margin-top: 1rem;
+      background-color: transparent;
+      color: $primary-color;
+      border-color: $primary-color;
+      font-size: 0.8em;
+      &:hover,
+      &:active {
+        background: rgba(0, 0, 0, 0.03);
+    }
+    }
+  }
+}
+
+// ---
+// Cards
+.confirmation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin: 3rem auto;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 1.6em;
+  background: #f9f9f9;
+  color: $text-color;
+  padding: 2rem;
+  border-radius: 4px;
+}
+
+// ---
+// Dynamic colors
+.background-primary,
+.background-secondary {
+  background: transparent;
+  transition: background;
+}
+
+.color-primary,
+.color-secondary {
+  color: #fff;
+  transition: color;
+}
+// ---

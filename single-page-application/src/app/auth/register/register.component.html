@@ -1,0 +1,44 @@
+<section>
+  <div class="page-content">
+    <div class="container load-animation">
+      <div class="title-container smaller">
+        <div class="page-title pseudo-bg-primary">Create Account</div>
+      </div>
+      <hr>
+      <div class="row login justify-content-md-center">
+        <div class="row">
+          <form [formGroup]="form" (ngSubmit)="register()">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" name="name" [ngClass]="{'is-invalid': isInvalid('name')}" class="form-control" formControlName="name"
+                     required [(ngModel)]="formData.name" id="name" aria-describedby="name" placeholder="Steve Jobs">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" name="email" [ngClass]="{'is-invalid': isInvalid('email')}" class="form-control" formControlName="email"
+                     required [(ngModel)]="formData.email" id="email" aria-describedby="email" placeholder="yourname@example.com">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" name="password" [ngClass]="{'is-invalid': isInvalid('password')}" class="form-control"
+                     formControlName="password" required [(ngModel)]="formData.password" id="password" aria-describedby="password" placeholder="Secret123">
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" name="confirmPassword" [ngClass]="{'is-invalid': isInvalid('confirmPassword')}" class="form-control"
+                     formControlName="confirmPassword" required [(ngModel)]="formData.confirmPassword" id="confirmPassword" aria-describedby="confirmPassword" placeholder="Secret123 (again)">
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <button class="btn btn-outline-danger" routerLink="../login" type="button">Back to login</button>
+                <button class="btn btn-outline-primary" type="submit">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

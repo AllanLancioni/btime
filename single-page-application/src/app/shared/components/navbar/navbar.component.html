@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md navbar-light">
+  <img class="navbar-brand" src="../../../../assets/images/logo-verde.svg" alt="">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon material-icons"></span>
+  </button>
+
+  <a class="navbar-brand">Btime</a>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+
+    <ul class="navbar-nav" *ngIf="user">
+
+      <li class="nav-item">
+        <a class="nav-link disabled">Welcome {{user.name}}!</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hover-primary" routerLink="/packages">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="globals.logout()" routerLink="/login"><i class="material-icons">exit_to_app</i></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav" *ngIf="!user">
+      <li class="nav-item">
+        <a class="nav-link hover-primary" routerLink="/login">LOGIN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link hover-primary" routerLink="/register">REGISTER</a>
+      </li>
+    </ul>
+  </div>
+</nav>

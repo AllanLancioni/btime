@@ -1,0 +1,34 @@
+<section>
+  <div class="page-content">
+    <div class="container load-animation">
+      <div class="title-container smaller">
+        <div class="page-title pseudo-bg-primary">Login</div>
+      </div>
+      <hr>
+      <div class="row login justify-content-md-center">
+        <div class="row">
+            <form [formGroup]="form" (ngSubmit)="login()">
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" [ngClass]="{'is-invalid': isInvalid('email')}" class="form-control" formControlName="email"
+                       required [(ngModel)]="formData.email" id="email" aria-describedby="email" placeholder="yourname@example.com">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" [ngClass]="{'is-invalid': isInvalid('password')}" class="form-control"
+                       formControlName="password" required [(ngModel)]="formData.password" id="password" aria-describedby="password" placeholder="Secret123">
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <button class="btn btn-outline-secondary" routerLink="../register" type="button">Create your account</button>
+                  <button class="btn btn-outline-primary" type="submit">Login</button>
+                </div>
+              </div>
+            </form>
+          </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

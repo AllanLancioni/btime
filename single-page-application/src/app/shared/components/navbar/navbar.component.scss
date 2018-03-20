@@ -1,0 +1,27 @@
+@import '../../../../theme/variables';
+
+.navbar-brand{
+  max-width: 160px;
+}
+.navbar{
+  height: 60px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding-left: 5%;
+  padding-right: 5%;
+  a {
+    cursor: pointer;
+    .disabled {
+      cursor: default;
+    }
+  }
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link{
+  transition: color .3s;
+  &:hover, &:active, &:focus{
+    color: $primary-color;
+  }
+}
+.active>.nav-link{
+  color: $primary-color;
+}

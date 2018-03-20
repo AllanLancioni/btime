@@ -1,0 +1,44 @@
+<div class="page-content">
+
+  <div class="container-fluid load-animation" *ngIf="!loading">
+    <div class="row">
+
+      <div class="col-4 package-details-container">
+
+        <div class="package-info">
+          <div class="image-wrapper">
+            <img [src]="'https://picsum.photos/100?image=' + product?.imageNumber || 30">
+          </div>
+          <div class="">
+            <h4>{{product?.title}}</h4>
+          </div>
+          <button class="btn btn-buy" type="button" (click)="buyProduct()">
+            Buy now R$ {{product?.price}}
+          </button>
+          <hr>
+          <div class="owner-info">
+            Created by <i>{{product?.owner?.name}}</i>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-8">
+        <div class="package-description">
+          <label>About {{product?.title}}</label>
+          <div class="product-description" [innerHTML]="product?.description"></div>
+          <hr>
+          <div class="lorem-description">
+            <p>
+              Lorem ipsum mollis class commodo et quis justo lobortis, etiam inceptos ultrices nam tellus mollis euismod pretium viverra, adipiscing vivamus nisl interdum fermentum libero morbi.
+              ultrices litora rutrum etiam euismod tristique rhoncus aenean, lacus urna bibendum primis sagittis id vestibulum nibh, est habitant inceptos himenaeos odio phasellus.
+              netus vehicula gravida etiam praesent congue suspendisse iaculis varius, nam orci malesuada lectus vehicula ultricies congue, dolor id condimentum congue dolor platea gravida.
+              consectetur elit fusce justo pellentesque sodales sagittis duis ultrices dictum nullam nisi, erat massa tempor sollicitudin proin nullam posuere morbi at risus, iaculis ligula consequat facilisis taciti posuere torquent posuere eros a.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

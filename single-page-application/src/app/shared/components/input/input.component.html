@@ -1,0 +1,3 @@
+<label [attr.for]="name">{{label}}</label>
+<input [attr.class]="classInput" [attr.type]="type" [attr.name]="name" [ngClass]="{'is-invalid': isInvalid(name)}" [required]="required"
+  [(ngModel)]="model" [id]="name" [placeholder]="placeholder" [attr.formControlName]="name">

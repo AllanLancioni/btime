@@ -1,0 +1,46 @@
+// Global variables
+// $primary-color: #56a945;
+//$primary-color: #5abd73;
+$primary-color: #1682af;
+$grey-light: #ededee;
+$text-color: #4d4d4d;
+$color-ambar: #FFC107;
+$color-ambar-dark: #FFA000;
+$color-orange: #FF9800;
+$color-orange-dark: #F57C00;
+$color-red: #f44336;
+$color-red-dark: #d32f2f;
+$color-pink: #ff2e63;
+$color-pink-dark: #c7234d;
+$color-blue-grey: #607D8B;
+$color-blue-grey-dark: #455A64;
+$color-blue-grey-light: #78909C;
+@mixin default-transition {
+  transition: all ease .3s;
+}
+
+@mixin style-title-center {
+  &::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: $primary-color;
+    display: block;
+    margin-left: 50%;
+    left: -15px;
+    top: -7px;
+    position: relative;
+  }
+}
+
+@mixin style-title-left {
+  &::after {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: $primary-color;
+    display: block;
+    top: -7px;
+    position: relative;
+  }
+}
